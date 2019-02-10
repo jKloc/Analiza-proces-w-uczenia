@@ -1,0 +1,279 @@
+Version: 2.0
+Alternatives: &alternatives
+  Dell Inspiron 3576:
+    ekran: 15.6
+    pamiec_RAM: 8
+    pamiec: 256
+    cena: 2799
+  Asus X540LA:
+    ekran: 15.6
+    pamiec_RAM: 4
+    pamiec: 256
+    cena: 1899
+  Acer Aspire Nitro 5:
+    ekran: 15.6
+    pamiec_RAM: 8
+    pamiec: 1000
+    cena: 2099
+  LENOVO v110-15:
+    ekran: 15.6
+    pamiec_RAM: 4
+    pamiec: 1000
+    cena: 1299
+  Asus UX433FA:
+    ekran: 14
+    pamiec_RAM: 8
+    pamiec: 256
+    cena: 4199
+  Dell Inspiron 5570:
+    ekran: 15.6
+    pamiec_RAM: 8
+    pamiec: 2000
+    cena: 3399
+  Lenovo Ideapad 330:
+    ekran: 15.6
+    pamiec_RAM: 8
+    pamiec: 1000
+    cena: 2749
+  Acer Spin 1:
+    ekran: 11.6
+    pamiec_RAM: 4
+    pamiec: 32
+    cena: 1499
+  MSI GL73:
+    ekran: 17.3
+    pamiec_RAM: 8
+    pamiec: 1000
+    cena: 3899
+  Dell Inspiron G3:
+    ekran: 17.3
+    pamiec_RAM: 16
+    pamiec: 2000
+    cena: 6199
+
+Goal:
+  name: Macbooki Apple
+  description: >
+  author: Marcin
+  decision-makers:
+    - ojciec: 0.4
+    - matka: 0.3
+    - dziecko: 0.3
+  preferences:
+    pairwise:
+      - [ekran, pamiec_RAM, 1/2]
+      - [ekran, pamiec, 1/2]
+      - [ekran, cena, 1/5]
+      - [pamiec_RAM, pamiec, 4]
+      - [pamiec_RAM, cena, 1]
+      - [pamiec, cena, 1/2]
+  children: 
+    Wydajnosc:
+      preferences:
+        ojciec:
+          - [szybkosc_dzialania, pamiec_RAM, 2]
+        matka:
+          - [szybkosc_dzialania, pamiec_RAM, 1]
+        dziecko:
+          - [szybkosc_dzialania, pamiec_RAM, 1/2] 
+  children:
+    szybkosc_dzialania:
+      preferences: 
+        pairwise:
+          - [Dell Inspiron 3576, Asus X540LA, 2]
+          - [Dell Inspiron 3576, Acer Aspire Nitro 5, 1]
+          - [Dell Inspiron 3576, LENOVO v110-15, 3]
+          - [Dell Inspiron 3576, Asus UX433FA, 1]
+          - [Dell Inspiron 3576, Dell Inspiron 5570, 1/2]
+          - [Dell Inspiron 3576, Lenovo Ideapad 330, 1]
+          - [Dell Inspiron 3576, Acer Spin 1, 3]
+          - [Dell Inspiron 3576, MSI GL73, 1/2]
+          - [Dell Inspiron 3576, Dell Inspiron G3, 1/4]
+          - [Asus X540LA, Acer Aspire Nitro 5, 1/2]
+          - [Asus X540LA, LENOVO v110-15, 1]
+          - [Asus X540LA, Asus UX433FA, 1/2]
+          - [Asus X540LA, Dell Inspiron 5570, 1/2]
+          - [Asus X540LA, Lenovo Ideapad 330, 1/2]
+          - [Asus X540LA, Acer Spin 1, 3]
+          - [Asus X540LA, MSI GL73, 1/3]
+          - [Asus X540LA, Dell Inspiron G3,  1/8]
+          - [Acer Aspire Nitro 5, LENOVO v110-15, 2]
+          - [Acer Aspire Nitro 5, Asus UX433FA, 1/2]
+          - [Acer Aspire Nitro 5, Dell Inspiron 5570, 1/2]
+          - [Acer Aspire Nitro 5, Lenovo Ideapad 330, 1/2]
+          - [Acer Aspire Nitro 5, Acer Spin 1, 3]
+          - [Acer Aspire Nitro 5, MSI GL73, 1/3]
+          - [Acer Aspire Nitro 5, Dell Inspiron G3, 1/8]
+          - [LENOVO v110-15, Asus UX433FA, 1/3]
+          - [LENOVO v110-15, Dell Inspiron 5570, 1/6]
+          - [LENOVO v110-15, Lenovo Ideapad 330, 1/3]
+          - [LENOVO v110-15, Acer Spin 1, 1]
+          - [LENOVO v110-15, MSI GL73, 1/3]
+          - [LENOVO v110-15, Dell Inspiron G3, 1/9]
+          - [Asus UX433FA, Dell Inspiron 5570, 1/2]
+          - [Asus UX433FA, Lenovo Ideapad 330, 1]
+          - [Asus UX433FA, Acer Spin 1, 3]
+          - [Asus UX433FA, MSI GL73, 1/2]
+          - [Asus UX433FA, Dell Inspiron G3, 1/4]
+          - [Dell Inspiron 5570, Lenovo Ideapad 330, 2]
+          - [Dell Inspiron 5570, Acer Spin 1, 6]
+          - [Dell Inspiron 5570, MSI GL73, 1]
+          - [Dell Inspiron 5570, Dell Inspiron G3, 1/2]
+          - [Lenovo Ideapad 330, Acer Spin 1, 3]
+          - [Lenovo Ideapad 330, MSI GL73, 1/2]
+          - [Lenovo Ideapad 330, Dell Inspiron G3, 1/4]
+          - [Acer Spin 1, MSI GL73, 1/6]
+          - [Acer Spin 1, Dell Inspiron G3,  1/12]
+          - [MSI GL73, Dell Inspiron G3, 1/2]
+        children: *alternatives
+    pamiec_RAM: 
+      preferences:
+        pairwise:
+          - [Dell Inspiron 3576, Asus X540LA, 2]
+          - [Dell Inspiron 3576, Acer Aspire Nitro 5, 1]
+          - [Dell Inspiron 3576, LENOVO v110-15, 2]
+          - [Dell Inspiron 3576, Asus UX433FA, 1]
+          - [Dell Inspiron 3576, Dell Inspiron 5570, 1]
+          - [Dell Inspiron 3576, Lenovo Ideapad 330, 1]
+          - [Dell Inspiron 3576, Acer Spin 1, 2]
+          - [Dell Inspiron 3576, MSI GL73, 1]
+          - [Dell Inspiron 3576, Dell Inspiron G3, 1/2]
+          - [Asus X540LA, Acer Aspire Nitro 5, 1/2]
+          - [Asus X540LA, LENOVO v110-15, 1]
+          - [Asus X540LA, Asus UX433FA, 1/2]
+          - [Asus X540LA, Dell Inspiron 5570, 1/2]
+          - [Asus X540LA, Lenovo Ideapad 330, 1/2]
+          - [Asus X540LA, Acer Spin 1, 1]
+          - [Asus X540LA, MSI GL73, 1/4]
+          - [Asus X540LA, Dell Inspiron G3,  1/8]
+          - [Acer Aspire Nitro 5, LENOVO v110-15, 2]
+          - [Acer Aspire Nitro 5, Asus UX433FA, 1]
+          - [Acer Aspire Nitro 5, Dell Inspiron 5570, 1]
+          - [Acer Aspire Nitro 5, Lenovo Ideapad 330, 1]
+          - [Acer Aspire Nitro 5, Acer Spin 1, 2]
+          - [Acer Aspire Nitro 5, MSI GL73, 1]
+          - [Acer Aspire Nitro 5, Dell Inspiron G3, 1/2]
+          - [LENOVO v110-15, Asus UX433FA, 1/2]
+          - [LENOVO v110-15, Dell Inspiron 5570, 1/2]
+          - [LENOVO v110-15, Lenovo Ideapad 330, 1/2]
+          - [LENOVO v110-15, Acer Spin 1, 1]
+          - [LENOVO v110-15, MSI GL73, 1/2]
+          - [LENOVO v110-15, Dell Inspiron G3, 1/4]
+          - [Asus UX433FA, Dell Inspiron 5570, 1]
+          - [Asus UX433FA, Lenovo Ideapad 330, 1]
+          - [Asus UX433FA, Acer Spin 1, 2]
+          - [Asus UX433FA, MSI GL73, 1]
+          - [Asus UX433FA, Dell Inspiron G3, 1/2]
+          - [Dell Inspiron 5570, Lenovo Ideapad 330, 1]
+          - [Dell Inspiron 5570, Acer Spin 1, 2]
+          - [Dell Inspiron 5570, MSI GL73, 1]
+          - [Dell Inspiron 5570, Dell Inspiron G3, 1/2]
+          - [Lenovo Ideapad 330, Acer Spin 1, 2]
+          - [Lenovo Ideapad 330, MSI GL73, 1]
+          - [Lenovo Ideapad 330, Dell Inspiron G3, 1/2]
+          - [Acer Spin 1, MSI GL73, 1/2]
+          - [Acer Spin 1, Dell Inspiron G3,  1/4]
+          - [MSI GL73, Dell Inspiron G3, 1/2]
+      children: *alternatives
+      preferences: 
+    Jakosc: 
+      preferences:
+        pairwise:
+          - [Dell Inspiron 3576, Asus X540LA, 2]
+          - [Dell Inspiron 3576, Acer Aspire Nitro 5, 2]
+          - [Dell Inspiron 3576, LENOVO v110-15, 2]
+          - [Dell Inspiron 3576, Asus UX433FA, 2]
+          - [Dell Inspiron 3576, Dell Inspiron 5570, 1]
+          - [Dell Inspiron 3576, Lenovo Ideapad 330, 2]
+          - [Dell Inspiron 3576, Acer Spin 1, 2]
+          - [Dell Inspiron 3576, MSI GL73, 1/2]
+          - [Dell Inspiron 3576, Dell Inspiron G3, 1]
+          - [Asus X540LA, Acer Aspire Nitro 5, 1]
+          - [Asus X540LA, LENOVO v110-15, 1]
+          - [Asus X540LA, Asus UX433FA, 1]
+          - [Asus X540LA, Dell Inspiron 5570, 1/2]
+          - [Asus X540LA, Lenovo Ideapad 330, 1]
+          - [Asus X540LA, Acer Spin 1, 1]
+          - [Asus X540LA, MSI GL73, 1/3]
+          - [Asus X540LA, Dell Inspiron G3,  1/2]
+          - [Acer Aspire Nitro 5, LENOVO v110-15, 1]
+          - [Acer Aspire Nitro 5, Asus UX433FA, 1]
+          - [Acer Aspire Nitro 5, Dell Inspiron 5570, 1/2]
+          - [Acer Aspire Nitro 5, Lenovo Ideapad 330, 1]
+          - [Acer Aspire Nitro 5, Acer Spin 1, 1]
+          - [Acer Aspire Nitro 5, MSI GL73, 1/3]
+          - [Acer Aspire Nitro 5, Dell Inspiron G3, 1/2]
+          - [LENOVO v110-15, Asus UX433FA, 1]
+          - [LENOVO v110-15, Dell Inspiron 5570, 1/2]
+          - [LENOVO v110-15, Lenovo Ideapad 330, 1]
+          - [LENOVO v110-15, Acer Spin 1, 1]
+          - [LENOVO v110-15, MSI GL73, 1/3]
+          - [LENOVO v110-15, Dell Inspiron G3, 1/2]
+          - [Asus UX433FA, Dell Inspiron 5570, 1/2]
+          - [Asus UX433FA, Lenovo Ideapad 330, 1]
+          - [Asus UX433FA, Acer Spin 1, 1]
+          - [Asus UX433FA, MSI GL73, 1/3]
+          - [Asus UX433FA, Dell Inspiron G3, 1/2]
+          - [Dell Inspiron 5570, Lenovo Ideapad 330, 2]
+          - [Dell Inspiron 5570, Acer Spin 1, 2]
+          - [Dell Inspiron 5570, MSI GL73, 1/2]
+          - [Dell Inspiron 5570, Dell Inspiron G3, 1]
+          - [Lenovo Ideapad 330, Acer Spin 1, 3]
+          - [Lenovo Ideapad 330, MSI GL73, 1/3]
+          - [Lenovo Ideapad 330, Dell Inspiron G3, 1/2]
+          - [Acer Spin 1, MSI GL73, 1/3]
+          - [Acer Spin 1, Dell Inspiron G3,  1/2]
+          - [MSI GL3, Dell Inspiron G3, 2]
+      children: *alternatives
+    Cena: 
+      preferences:
+        pairwise:
+          - [Dell Inspiron 3576, Asus X540LA, 1/2]
+          - [Dell Inspiron 3576, Acer Aspire Nitro 5, 1]
+          - [Dell Inspiron 3576, LENOVO v110-15, 1/2]
+          - [Dell Inspiron 3576, Asus UX433FA, 2]
+          - [Dell Inspiron 3576, Dell Inspiron 5570, 1]
+          - [Dell Inspiron 3576, Lenovo Ideapad 330, 1]
+          - [Dell Inspiron 3576, Acer Spin 1, 1/2]
+          - [Dell Inspiron 3576, MSI GL73, 2]
+          - [Dell Inspiron 3576, Dell Inspiron G3, 3]
+          - [Asus X540LA, Acer Aspire Nitro 5, 2]
+          - [Asus X540LA, LENOVO v110-15, 1/2]
+          - [Asus X540LA, Asus UX433FA, 3]
+          - [Asus X540LA, Dell Inspiron 5570, 2]
+          - [Asus X540LA, Lenovo Ideapad 330, 2]
+          - [Asus X540LA, Acer Spin 1, 1]
+          - [Asus X540LA, MSI GL73, 3]
+          - [Asus X540LA, Dell Inspiron G3,  4]
+          - [Acer Aspire Nitro 5, LENOVO v110-15, 2]
+          - [Acer Aspire Nitro 5, Asus UX433FA, 1]
+          - [Acer Aspire Nitro 5, Dell Inspiron 5570, 1]
+          - [Acer Aspire Nitro 5, Lenovo Ideapad 330, 1]
+          - [Acer Aspire Nitro 5, Acer Spin 1, 1/3]
+          - [Acer Aspire Nitro 5, MSI GL73, 2]
+          - [Acer Aspire Nitro 5, Dell Inspiron G3, 3]
+          - [LENOVO v110-15, Asus UX433FA, 3]
+          - [LENOVO v110-15, Dell Inspiron 5570, 3]
+          - [LENOVO v110-15, Lenovo Ideapad 330, 2]
+          - [LENOVO v110-15, Acer Spin 1, 1]
+          - [LENOVO v110-15, MSI GL73, 3]
+          - [LENOVO v110-15, Dell Inspiron G3, 5]
+          - [Asus UX433FA, Dell Inspiron 5570, 1]
+          - [Asus UX433FA, Lenovo Ideapad 330, 1/2]
+          - [Asus UX433FA, Acer Spin 1, 1/3]
+          - [Asus UX433FA, MSI GL73, 1]
+          - [Asus UX433FA, Dell Inspiron G3, 2]
+          - [Dell Inspiron 5570, Lenovo Ideapad 330, 1]
+          - [Dell Inspiron 5570, Acer Spin 1, 1/2]
+          - [Dell Inspiron 5570, MSI GL73, 1]
+          - [Dell Inspiron 5570, Dell Inspiron G3, 2]
+          - [Lenovo Ideapad 330, Acer Spin 1, 1/2]
+          - [Lenovo Ideapad 330, MSI GL73, 2]
+          - [Lenovo Ideapad 330, Dell Inspiron G3, 2]
+          - [Acer Spin 1, MSI GL73, 2]
+          - [Acer Spin 1, Dell Inspiron G3,  4]
+          - [MSI GL3, Dell Inspiron G3, 2]
+      children: *alternatives
+#
+# End of Goal Section
+#####################################
